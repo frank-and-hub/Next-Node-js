@@ -5,7 +5,7 @@ import SelectMenu from '../form/select/SelectMenu'
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifySuccess } from '../comman/notification/Notification'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { processNotifications } from '../../../utils/notificationUtils'
 import { formattedData } from '../../../utils/helper'
@@ -13,13 +13,14 @@ import { get, patch } from '../../../utils/AxiosUtils'
 import { useLoading } from '../../../context/LoadingContext'
 import CardForm from '../card/CardForm'
 import { menuValidation, useFormValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { loading, setLoading } = useLoading();
   const [formKey, setFormKey] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const initialState = {
     name: '',
@@ -45,7 +46,7 @@ function Edit() {
         resetForm()
       }
       notifySuccess(res.message)
-      navigate('/admin/menus', { replace: true })
+      router.push('/admin/menus')
     } catch (err) {
       console.error(err.message);
     } finally {

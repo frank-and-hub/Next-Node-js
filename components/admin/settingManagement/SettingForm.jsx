@@ -5,13 +5,13 @@ import SubmitButton from '../form/SubmitButton';
 import { useFormValidation } from '../../../utils/FormValidation';
 import { useLoading } from '../../../context/LoadingContext';
 import { notifyError, notifyInfo, notifySuccess } from '../comman/notification/Notification';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { get, post } from '../../../utils/AxiosUtils';
 
 const SettingForm = () => {
     const [formKey, setFormKey] = useState(0);
     const { loading, setLoading } = useLoading();
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const initialState = {
         color: '#967ADC',
@@ -40,7 +40,7 @@ const SettingForm = () => {
             if (res) {
                 setFormKey(res.data.id);
                 notifySuccess(res.message)
-                navigate('/admin/settings', { replace: true })
+                router.push('/admin/settings')
                 window.location.reload();
             }
         } catch (err) {

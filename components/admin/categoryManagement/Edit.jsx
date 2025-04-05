@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
-
+import { useParams } from 'react-router-dom'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
 import { formattedData } from '../../../utils/helper'
 import { processNotifications } from '../../../utils/notificationUtils'
@@ -13,11 +12,12 @@ import SubmitButton from '../form/SubmitButton'
 import Textarea from '../form/Textarea'
 import CardForm from '../card/CardForm'
 import Input from '../form/Input'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -45,7 +45,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/products/categories', { replace: true })
+            router.push('/admin/products/categories')
         } catch (err) {
             notifyError(err.message)
         } finally {

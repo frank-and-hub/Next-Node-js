@@ -5,14 +5,14 @@ import Input from '../form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
 import SelectIcon from '../form/select/SelectIcon'
 import Textarea from '../form/Textarea'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../context/LoadingContext'
 import SelectCategory from '../form/select/SelectCategory'
 import CardForm from '../card/CardForm'
 import { subCategoryValidation, useFormValidation } from '../../../utils/FormValidation'
 
 function Add() {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -40,7 +40,7 @@ function Add() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/products/sub-categories', { replace: true })
+            router.push('/admin/products/sub-categories')
         } catch (err) {
             notifyError(err.message)
         } finally {

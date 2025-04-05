@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux'
 import { get } from '../../../../utils/AxiosUtils'
 import { processNotifications } from '../../../../utils/notificationUtils'
 import Chat from '../Chat'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 
 const Support = () => {
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const [supportDetails, setSupportDetails] = useState({});
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const Support = () => {
             <section className={`section contact`}>
                 <div className={`card-head`}>
                     <div className={`card-title`}>
-                        <p className={`py-0 m-0 btn`}  onClick={() => (navigate('/admin/supports/create', true))}>Support </p>
+                        <p className={`py-0 m-0 btn`}  onClick={() => (router.push('/admin/supports/create', true))}>Support </p>
                     </div>
                 </div>
                 <div className={`row gy-4`}>

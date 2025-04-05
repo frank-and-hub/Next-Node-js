@@ -3,7 +3,7 @@ import { post } from '../../../utils/AxiosUtils'
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../context/LoadingContext'
 import Textarea from '../form/Textarea'
 import CardForm from '../card/CardForm'
@@ -14,7 +14,7 @@ function Add() {
 
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
-    const navigate = useNavigate();
+    const router = useRouter();
     const initialState = {
         name: ``,
         owner_name:``,
@@ -49,7 +49,7 @@ function Add() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/storage/warehouses', { replace: true })
+            router.push('/admin/storage/warehouses')
         } catch (err) {
             notifyError(err.message)
         } finally {

@@ -4,14 +4,14 @@ import { useLoading } from '../../../context/LoadingContext'
 import { notifySuccess } from '../comman/notification/Notification'
 import { post } from '../../../utils/AxiosUtils'
 import { transformData, ucwords } from '../../../utils/helper'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useFormValidation, validate } from '../../../utils/FormValidation'
 
 export const PermissionTable = ({ response, permission, user_id = null, mainFormReset }) => {
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
     const [toggle, setToggle] = useState(false);
-    const navigate = useNavigate();
+    const router = useRouter();
     const columnCount = `7`;
     const initialState = {};
 
@@ -30,7 +30,7 @@ export const PermissionTable = ({ response, permission, user_id = null, mainForm
                 const res = await post(`/users/${user_id}/permssions`, transformData(values));
                 notifySuccess(res.message)
             }
-            navigate('/admin/users/permissions', { replace: true })
+            router.push('/admin/users/permissions')
         } catch (err) {
             console.error(err.message);
         } finally {

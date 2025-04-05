@@ -568,7 +568,7 @@ function Home() {
                     }, void 0, false, {
                         fileName: "[project]/pages/index.tsx",
                         lineNumber: 20,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "description",
@@ -576,7 +576,7 @@ function Home() {
                     }, void 0, false, {
                         fileName: "[project]/pages/index.tsx",
                         lineNumber: 21,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
                         name: "viewport",
@@ -584,7 +584,7 @@ function Home() {
                     }, void 0, false, {
                         fileName: "[project]/pages/index.tsx",
                         lineNumber: 22,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
                         rel: "icon",
@@ -592,197 +592,53 @@ function Home() {
                     }, void 0, false, {
                         fileName: "[project]/pages/index.tsx",
                         lineNumber: 23,
-                        columnNumber: 9
+                        columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/index.tsx",
                 lineNumber: 19,
-                columnNumber: 7
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `${__TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].page} ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$geist_240504b1$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].variable} ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$geist_mono_32c496e5$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].variable}`,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].main,
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].logo,
-                                src: "/next.svg",
-                                alt: "Next.js logo",
-                                width: 180,
-                                height: 38,
-                                priority: true
-                            }, void 0, false, {
-                                fileName: "[project]/pages/index.tsx",
-                                lineNumber: 29,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                        children: [
-                                            "Get started by editing ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                                                children: "pages/index.tsx"
-                                            }, void 0, false, {
-                                                fileName: "[project]/pages/index.tsx",
-                                                lineNumber: 39,
-                                                columnNumber: 38
-                                            }, this),
-                                            "."
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/pages/index.tsx",
-                                        lineNumber: 38,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                        children: "Save and see your changes instantly."
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/index.tsx",
-                                        lineNumber: 41,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/index.tsx",
-                                lineNumber: 37,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].ctas,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].primary,
-                                        href: "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-                                        target: "_blank",
-                                        rel: "noopener noreferrer",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].logo,
-                                                src: "/vercel.svg",
-                                                alt: "Vercel logomark",
-                                                width: 20,
-                                                height: 20
-                                            }, void 0, false, {
-                                                fileName: "[project]/pages/index.tsx",
-                                                lineNumber: 51,
-                                                columnNumber: 15
-                                            }, this),
-                                            "Deploy now"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/pages/index.tsx",
-                                        lineNumber: 45,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-                                        target: "_blank",
-                                        rel: "noopener noreferrer",
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].secondary,
-                                        children: "Read our docs"
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/index.tsx",
-                                        lineNumber: 60,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/index.tsx",
-                                lineNumber: 44,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/pages/index.tsx",
-                        lineNumber: 28,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].footer,
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                        "aria-hidden": true,
-                                        src: "/file.svg",
-                                        alt: "File icon",
-                                        width: 16,
-                                        height: 16
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/index.tsx",
-                                        lineNumber: 76,
-                                        columnNumber: 13
-                                    }, this),
-                                    "Learn"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/index.tsx",
-                                lineNumber: 71,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                        "aria-hidden": true,
-                                        src: "/window.svg",
-                                        alt: "Window icon",
-                                        width: 16,
-                                        height: 16
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/index.tsx",
-                                        lineNumber: 90,
-                                        columnNumber: 13
-                                    }, this),
-                                    "Examples"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/index.tsx",
-                                lineNumber: 85,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "https://nextjs.org?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                        "aria-hidden": true,
-                                        src: "/globe.svg",
-                                        alt: "Globe icon",
-                                        width: 16,
-                                        height: 16
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/index.tsx",
-                                        lineNumber: 104,
-                                        columnNumber: 13
-                                    }, this),
-                                    "Go to nextjs.org →"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/index.tsx",
-                                lineNumber: 99,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/pages/index.tsx",
-                        lineNumber: 70,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].main,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].logo,
+                            src: "/next.svg",
+                            alt: "Next.js logo",
+                            width: 180,
+                            height: 38,
+                            priority: true
+                        }, void 0, false, {
+                            fileName: "[project]/pages/index.tsx",
+                            lineNumber: 29,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$Home$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].logo,
+                            src: "/nodejs.svg",
+                            alt: "Node.js logo",
+                            width: 180,
+                            height: 62,
+                            priority: true
+                        }, void 0, false, {
+                            fileName: "[project]/pages/index.tsx",
+                            lineNumber: 37,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/pages/index.tsx",
+                    lineNumber: 28,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/pages/index.tsx",
                 lineNumber: 25,
-                columnNumber: 7
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true);

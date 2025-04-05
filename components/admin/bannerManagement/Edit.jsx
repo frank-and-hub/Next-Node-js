@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import SubmitButton from '../form/SubmitButton'
@@ -14,11 +14,12 @@ import api from '../../../utils/api'
 import CardForm from '../card/CardForm'
 import { bannerValidation, useFormValidation } from '../../../utils/FormValidation'
 import { notifyError, notifyInfo, notifySuccess } from '../comman/notification/Notification'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
     const [src, setSrc] = useState(``);
@@ -49,7 +50,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/banners', { replace: true })
+            router.push('/admin/banners')
         } catch (err) {
             notifyError(err.message)
         } finally {

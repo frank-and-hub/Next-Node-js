@@ -4,7 +4,7 @@ import SelectPermission from '../form/select/SelectPermission'
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../context/LoadingContext'
 import CardForm from '../card/CardForm'
 import { roleValidation, useFormValidation } from '../../../utils/FormValidation'
@@ -13,7 +13,7 @@ function Add() {
 
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const initialState = {
         name: '',
@@ -36,7 +36,7 @@ function Add() {
             if (res) {
                 resetForm()
                 notifySuccess(res.message)
-                navigate('/admin/roles', { replace: true })
+                router.push('/admin/roles')
             }
         } catch (err) {
             notifyError(err.message)

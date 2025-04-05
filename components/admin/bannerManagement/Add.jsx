@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
@@ -11,9 +9,10 @@ import config from '../../../config'
 import api from '../../../utils/api'
 import CardForm from '../card/CardForm'
 import { bannerValidation, useFormValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Add() {
-    const navigate = useNavigate();
+     const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
     const [src, setSrc] = useState(``);
@@ -50,7 +49,7 @@ function Add() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/banners', { replace: true })
+            router.push('/admin/banners')
         } catch (err) {
             notifyError(err.message)
         } finally {

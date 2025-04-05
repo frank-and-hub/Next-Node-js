@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import config from '../../../config'
 import api from '../../../utils/api'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { notifyError, notifySuccess } from '../comman/notification/Notification.js'
 import { useAuth } from '../../../utils/AuthContext'
 import { checkFileValidation, getFullName } from './../../../utils/helper.js'
@@ -56,7 +56,7 @@ function ProfileCard({ user }) {
                     <h3 key={0}>{user?.email}</h3>
                     <div className={`social-links mt-2 w-100`}>
                         {user?.social_details && user?.social_details.length > 0 && user?.social_details.map((social) => (
-                            <Link to={`${social?.url}`} className={social?.name} ><i className={`bi bi-${social?.icon}`}></i></Link>
+                            <Link href={`${social?.url}`} className={social?.name} ><i className={`bi bi-${social?.icon}`}></i></Link>
                         ))}
                     </div>
                 </div>

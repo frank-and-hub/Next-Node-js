@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useLoading } from '../../../../context/LoadingContext'
 import { notifyError, notifyInfo, notifySuccess } from '../../comman/notification/Notification'
 import { formattedData } from '../../../../utils/helper'
@@ -11,11 +11,12 @@ import SelectIcon from '../../form/select/SelectIcon'
 import SubmitButton from '../../form/SubmitButton'
 import CardForm from '../../card/CardForm'
 import { socialDetailValidation, useFormValidation } from '../../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -43,7 +44,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/settings/social-details', { replace: true })
+            router.push('/admin/settings/social-details')
         } catch (err) {
             notifyError(err.message)
         } finally {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ucwords } from '../../../utils/helper'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 function Button({ iconClass, onClick = null, tooltip = null, url = null, disabled = false }) {
     const classValue = `btn btn-light m-auto btn-md p-0 bg-transparent border-0 rounded-circle`;
@@ -8,7 +8,7 @@ function Button({ iconClass, onClick = null, tooltip = null, url = null, disable
         <>
             {tooltip ? (
                 <span className={`d-inline-block`} tabIndex="0" data-toggle="tooltip" title={ucwords(tooltip)}>
-                    {url ? (<Link to={url} className={classValue} disabled={disabled}>
+                    {url ? (<Link href={url} className={classValue} disabled={disabled}>
                         <i className={iconClass}></i>
                     </Link>) : (
                         <button onClick={onClick ?? ((e) => (e.preventDefault()))} className={classValue} disabled={disabled}>
@@ -17,7 +17,7 @@ function Button({ iconClass, onClick = null, tooltip = null, url = null, disable
                 </span>
             ) : (
                 <>
-                    {url ? (<Link to={url} className={classValue} disabled={disabled}>
+                    {url ? (<Link href={url} className={classValue} disabled={disabled}>
                         <i className={iconClass}></i>
                     </Link>) : (
                         <button onClick={onClick ?? ((e) => (e.preventDefault()))} className={classValue} disabled={disabled}>

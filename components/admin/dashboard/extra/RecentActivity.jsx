@@ -1,6 +1,6 @@
 import React from 'react'
 import {Filter} from '../Filter'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 function RecentActivity() {
     return (
@@ -14,7 +14,7 @@ function RecentActivity() {
                             <div className={`activite-label`}>32 min</div>
                             <i className='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                             <div className={`activity-content`}>
-                                Quia quae rerum <Link to={`#`} onClick={(e) => e.preventDefault()} className={`fw-bold text-dark`}>explicabo officiis</Link> beatae
+                                Quia quae rerum <Link href={`#`} onClick={(e) => e.preventDefault()} className={`fw-bold text-dark`}>explicabo officiis</Link> beatae
                             </div>
                         </div>
                         <div className={`activity-item d-flex`}>
@@ -35,7 +35,7 @@ function RecentActivity() {
                             <div className={`activite-label`}>1 day</div>
                             <i className='bi bi-circle-fill activity-badge text-info align-self-start'></i>
                             <div className={`activity-content`}>
-                                Tempore autem saepe <Link to={`#`} onClick={(e) => e.preventDefault()} className={`fw-bold text-dark`}>occaecati voluptatem</Link> tempore
+                                Tempore autem saepe <Link href={`#`} onClick={(e) => e.preventDefault()} className={`fw-bold text-dark`}>occaecati voluptatem</Link> tempore
                             </div>
                         </div>
                         <div className={`activity-item d-flex`}>

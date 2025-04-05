@@ -5,13 +5,14 @@ import SelectPermission from '../form/select/SelectPermission'
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { processNotifications } from '../../../utils/notificationUtils'
 import { formattedData } from '../../../utils/helper'
 import { useLoading } from '../../../context/LoadingContext'
 import CardForm from '../card/CardForm'
 import { roleValidation, useFormValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
@@ -19,7 +20,7 @@ function Edit() {
     const { loading, setLoading } = useLoading();
 
     const [formKey, setFormKey] = useState(0);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const initialState = {
         name: '',
@@ -43,7 +44,7 @@ function Edit() {
             if (res) {
                 resetForm()
                 notifySuccess(res.message)
-                navigate('/admin/roles', { replace: true })
+                router.push('/admin/roles')
             }
         } catch (err) {
             notifyError(err.message)

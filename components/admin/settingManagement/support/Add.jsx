@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { post } from '../../../../utils/AxiosUtils'
 import SubmitButton from '../../form/SubmitButton'
 import { notifySuccess } from '../../comman/notification/Notification'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../../context/LoadingContext'
 import { supportValidation, useFormValidation } from '../../../../utils/FormValidation'
 import Input from '../../form/Input'
@@ -14,7 +14,7 @@ function Add() {
 
   const { loading, setLoading } = useLoading();
   const [formKey, setFormKey] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const initialState = {
     cell: ``,
@@ -42,7 +42,7 @@ function Add() {
       if (res) {
         resetForm()
         notifySuccess(res.message)
-        navigate('/admin/supports', true);
+        router.push('/admin/supports', true);
       }
     } catch (err) {
       console.error(err.message);

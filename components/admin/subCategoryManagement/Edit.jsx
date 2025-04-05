@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
 import { processNotifications } from '../../../utils/notificationUtils'
@@ -13,11 +13,12 @@ import Input from '../form/Input'
 import SelectCategory from '../form/select/SelectCategory'
 import CardForm from '../card/CardForm'
 import { subCategoryValidation, useFormValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -46,7 +47,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/products/sub-categories', { replace: true })
+            router.push('/admin/products/sub-categories')
         } catch (err) {
             notifyError(err.message)
         } finally {

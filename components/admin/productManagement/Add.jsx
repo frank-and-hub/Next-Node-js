@@ -4,7 +4,7 @@ import api from '../../../utils/api'
 import Input from '../form/Input'
 import Textarea from '../form/Textarea'
 import SubmitButton from '../form/SubmitButton'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../context/LoadingContext'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
 import { checkFileValidation } from '../../../utils/helper'
@@ -21,7 +21,7 @@ function Add() {
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
     const [src, setSrc] = useState(``);
-    const navigate = useNavigate();
+    const router = useRouter();
     const baseUrl = config.reactApiUrl;
     const initialState = {
         name: '',
@@ -61,7 +61,7 @@ function Add() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/products', { replace: true })
+            router.push('/admin/products')
         } catch (err) {
             notifyError(err.message)
         } finally {

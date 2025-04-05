@@ -5,7 +5,7 @@ import Input from '../form/Input'
 import Textarea from '../form/Textarea'
 import SubmitButton from '../form/SubmitButton'
 import { useDispatch } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useLoading } from '../../../context/LoadingContext'
 import { processNotifications } from '../../../utils/notificationUtils'
 import { checkFileValidation, formattedData } from '../../../utils/helper'
@@ -18,11 +18,12 @@ import SelectCategory from '../form/select/SelectCategory'
 import SelectBrand from '../form/select/SelectBrand'
 import CardForm from '../card/CardForm'
 import { productValidation, useFormValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const [src, setSrc] = useState(``);
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
@@ -66,7 +67,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/products', { replace: true })
+            router.push('/admin/products')
         } catch (err) {
             notifyError(err.message)
         } finally {

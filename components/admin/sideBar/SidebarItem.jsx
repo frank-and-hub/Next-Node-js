@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import SubSidebarItem from './SubSidebarItem'
-import { ucwords } from '../../../utils/helper'
-import { SidebarContext } from '../../../context/SidebarContext'
+import { ucwords } from '@/utils/helper'
+import { SidebarContext } from '@/context/SidebarContext'
 
 const SidebarItem = ({ icon, label, route, subItems }) => {
     const [active, setActive] = useState(null);
     const { pathname } = useContext(SidebarContext);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     useEffect(() => {
         const activeMenu = localStorage.getItem('active-child-menu');
@@ -34,7 +34,7 @@ const SidebarItem = ({ icon, label, route, subItems }) => {
                     title={ucwords(label)}
                     onClick={(e) => {
                         e.preventDefault();
-                        navigate(route, { replace: true });
+                        router.push(route)
                         handleSetActive(label);
                     }}
                 >

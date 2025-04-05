@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
@@ -14,11 +14,12 @@ import Textarea from '../form/Textarea'
 import api from '../../../utils/api'
 import config from '../../../config'
 import CardForm from '../card/CardForm'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
     const [src, setSrc] = useState(``);
@@ -51,7 +52,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/brands', { replace: true })
+            router.push('/admin/brands')
         } catch (err) {
             notifyError(err.message)
         } finally {
@@ -106,7 +107,7 @@ function Edit() {
         <CardForm handleSubmit={handleSubmit} key={formKey}>
             <div className={`col-md-4`}>
                 <div className='cursor-none'>
-                    <img src={src} alt={`Brand`} className={`rounded-25 col-md-6 image-shell w-50`} onClick={handleClick} loading={`lazy`}/>
+                    <img src={src} alt={`Brand`} className={`rounded-25 col-md-6 image-shell w-50`} onClick={handleClick} loading={`lazy`} />
                 </div>
             </div>
             <input type={`file`} id={`imageInput`} className={`d-none`} name={`image`} onChange={handleFileUpload} />

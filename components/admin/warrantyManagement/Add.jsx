@@ -3,7 +3,6 @@ import { post } from '../../../utils/AxiosUtils'
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
-import { useNavigate } from 'react-router-dom'
 import { useLoading } from '../../../context/LoadingContext'
 import SelectForm from '../form/select/SelectForm'
 import { PeriodOptions } from '../../../utils/selects'
@@ -15,7 +14,7 @@ function Add() {
 
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
-    const navigate = useNavigate();
+    const router = useRouter();
     const initialState = {
         name: '',
         duration: '',
@@ -40,7 +39,7 @@ function Add() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/warranties', { replace: true })
+            router.push('/admin/warranties')
         } catch (err) {
             notifyError(err.message)
         } finally {

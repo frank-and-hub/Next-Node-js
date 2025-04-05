@@ -1,6 +1,6 @@
 import React from 'react'
 import Designedby from './designedby/Designedby'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 function Footer() {
     return (
@@ -14,7 +14,7 @@ function Footer() {
                 </div>
             </footer>
 
-            <Link to={`#`} onClick={(e) => e.preventDefault()} className={`back-to-top d-flex align-items-center justify-content-center rounded-25`} >
+            <Link href={`#`} onClick={(e) => e.preventDefault()} className={`back-to-top d-flex align-items-center justify-content-center rounded-25`} >
                 <i className={`bi bi-arrow-up-short`}></i>
             </Link>
         </>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SignOut from '../../signOut/SignOut'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { getFullName, ucwords } from '../../../../utils/helper';
 
@@ -33,7 +33,7 @@ function User() {
                 </Link>
                 <ul className={`dropdown-menu dropdown-menu-end dropdown-menu-arrow profile rounded-25 card-color`}>
                     <li className={`dropdown-header`}>
-                        <Link to={`/admin/profile`} className={``} >
+                        <Link href={`/admin/profile`} className={``} >
                             <h6 className={``} >{ucwords(getFullName(user?.name))}</h6>
                             <span className={``} >{user?.email}</span>
                         </Link>

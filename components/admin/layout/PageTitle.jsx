@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { useReRender } from '../../../context/ReRenderContext'
 import { handleToggleSidebar } from '../../../utils/helper';
 
@@ -31,7 +31,7 @@ function PageTitle({ title, location }) {
                     </div>
                     <ol className={`breadcrumb m-0 text-capitalize shadow rounded-pill px-3 py-2`}>
                         <li className={`breadcrumb-item`}>
-                            <Link to={`/admin/index`} >
+                            <Link href={`/admin/index`} >
                                 {/* <i className={`bi bi-house-door`}></i>  */}
                                 Home
                             </Link>
@@ -46,7 +46,7 @@ function PageTitle({ title, location }) {
                                 </li>
                             ) : (
                                 <li key={index} className={`breadcrumb-item`}>
-                                    <Link to={routeTo} data-discover={true} >{(segment.replace(/-/g, ' '))}</Link>
+                                    <Link href={routeTo} data-discover={true} >{(segment.replace(/-/g, ' '))}</Link>
                                 </li>
                             );
                         })}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 export const Filter = ({ setFilterFunction }) => {
     return (
@@ -13,16 +13,16 @@ export const Filter = ({ setFilterFunction }) => {
                         <h6>Filter</h6>
                     </li>
                     <li>
-                        <Link to={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`today`)}>Today</Link>
+                        <Link href={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`today`)}>Today</Link>
                     </li>
                     <li>
-                        <Link to={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`this_week`)}>This Week</Link>
+                        <Link href={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`this_week`)}>This Week</Link>
                     </li>
                     <li>
-                        <Link to={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`this_month`)}>This Month</Link>
+                        <Link href={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`this_month`)}>This Month</Link>
                     </li>
                     <li>
-                        <Link to={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`this_year`)}>This Year</Link>
+                        <Link href={`#`} className={`dropdown-item`} onClick={(e) => setFilterFunction(`this_year`)}>This Year</Link>
                     </li>
                 </ul>
             </div>

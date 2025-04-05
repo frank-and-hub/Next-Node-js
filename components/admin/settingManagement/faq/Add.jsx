@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { post } from '../../../../utils/AxiosUtils'
 import SubmitButton from '../../form/SubmitButton'
 import { notifySuccess } from '../../comman/notification/Notification'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import Textarea from '../../form/Textarea'
 import { useLoading } from '../../../../context/LoadingContext'
 import { faqValidation, useFormValidation } from '../../../../utils/FormValidation'
@@ -11,7 +11,7 @@ function Add() {
 
   const { loading, setLoading } = useLoading();
   const [formKey, setFormKey] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const initialState = {
     question: '',
@@ -33,7 +33,7 @@ function Add() {
       if (res) {
         resetForm()
         notifySuccess(res.message)
-        navigate('/admin/settings/faqs', true);
+        router.push('/admin/settings/faqs', true);
       }
     } catch (err) {
       console.error(err.message);

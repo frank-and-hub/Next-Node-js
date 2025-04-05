@@ -6,13 +6,13 @@ import Input from '../../Form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../../Comman/Notification/Notification'
 import SelectIcon from '../../Form/Select/SelectIcon'
 import Textarea from '../../Form/Textarea'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../context/LoadingContext'
 import CardForm from '../card/CardForm'
 import { serviceValidation } from '../../../utils/FormValidation'
 
 function Add() {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -40,7 +40,7 @@ function Add() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/services', { replace: true })
+            router.push('/services')
         } catch (err) {
             notifyError(err.message)
         } finally {

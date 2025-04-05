@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { debounce, formattedData, truncateString, ucwords } from '../../../utils/helper'
+import Link from 'next/link'
+import { debounce, formattedData, truncateString, ucwords } from '@/utils/helper'
 import { notifyError, notifySuccess } from '../comman/notification/Notification'
-import { destroy, get, patch } from '../../../utils/AxiosUtils'
-import { SidebarContext } from '../../../context/SidebarContext'
-import { useLoading } from '../../../context/LoadingContext'
+import { destroy, get, patch } from '@/utils/AxiosUtils'
+import { SidebarContext } from '@/context/SidebarContext'
+import { useLoading } from '@/context/LoadingContext'
 import { Loading } from '../loading/Loading'
 import Button from './Button'
 import Pageignation from './Pageignation'
-import ReusableModal from '../models/ReusableModal'
+import ReusableModal from '@/models/ReusableModal'
 
 // Sample data
 const Table = ({
@@ -211,7 +211,7 @@ const Table = ({
                                     {handelCreate && (
                                         <div className={`col-6 m-auto`}>
                                             <span className={`d-inline-block color`} tabIndex={`0`} data-bs-toggle={`tooltip`} title={ucwords(`add`)}>
-                                                <Link to={`/admin${pathname}/create`} className={`shadow btn btn-sm rounded-circle`}>
+                                                <Link href={`/admin${pathname}/create`} className={`shadow btn btn-sm rounded-circle`}>
                                                     <i className={`bi bi-plus-lg`}></i>
                                                 </Link>
                                             </span>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Input from '../form/Input'
 import SubmitButton from '../form/SubmitButton'
 import SelectRole from '../form/select/SelectRole'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { notifyInfo, notifySuccess } from '../comman/notification/Notification'
 import { get, patch } from '../../../utils/AxiosUtils'
@@ -11,11 +11,12 @@ import { formattedData } from '../../../utils/helper'
 import { useLoading } from '../../../context/LoadingContext'
 import CardForm from '../card/CardForm'
 import { useFormValidation, userValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
@@ -48,7 +49,7 @@ function Edit() {
             setResponse(res);
             resetForm()
             notifySuccess(res.message)
-            navigate('/admin/users', { replace: true })
+            router.push('/admin/users')
         } catch (err) {
             console.error(err.message);
             setError(err.message);

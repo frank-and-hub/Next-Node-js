@@ -4,13 +4,13 @@ import SubmitButton from '../form/SubmitButton'
 import SelectRole from '../form/select/SelectRole'
 import { post } from '../../../utils/AxiosUtils'
 import { notifySuccess, notifyInfo } from '../comman/notification/Notification'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../context/LoadingContext'
 import { useFormValidation, userValidation } from '../../../utils/FormValidation'
 import SelectDialCode from '../form/select/SelectDialCode'
 
 function Add() {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
@@ -43,7 +43,7 @@ function Add() {
             setResponse(res);
             resetForm()
             notifySuccess(res.message)
-            navigate('/admin/users', { replace: true })
+            router.push('/admin/users')
         } catch (err) {
             console.error(err.message);
             setError(err.message);

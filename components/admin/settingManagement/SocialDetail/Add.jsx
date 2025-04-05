@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { post } from '../../../../utils/AxiosUtils'
 import { useLoading } from '../../../../context/LoadingContext'
 import Input from '../../form/Input'
@@ -10,7 +10,7 @@ import CardForm from '../../card/CardForm'
 import { socialDetailValidation, useFormValidation } from '../../../../utils/FormValidation'
 
 function Add() {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -37,7 +37,7 @@ function Add() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/settings/social-details', { replace: true })
+            router.push('/admin/settings/social-details')
         } catch (err) {
             notifyError(err.message)
         } finally {

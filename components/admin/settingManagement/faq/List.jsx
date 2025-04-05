@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { destroy, get } from '../../../../utils/AxiosUtils'
+import { destroy, get } from '@/utils/AxiosUtils'
 import AccordionFrom from './AccordionFrom'
-import { useNavigate } from 'react-router-dom'
-import { SidebarContext } from '../../../../context/SidebarContext'
+import { useRouter } from 'next/router'
+import { SidebarContext } from '@/context/SidebarContext'
 import { notifySuccess } from '../../comman/notification/Notification'
-import { useLoading } from '../../../../context/LoadingContext'
+import { useLoading } from '@/context/LoadingContext'
 import { Loading } from '../../loading/Loading'
-import ReusableModal from '../../models/ReusableModal'
+import ReusableModal from '@/models/ReusableModal'
 
 function List() {
     const { pathname } = useContext(SidebarContext);
@@ -16,7 +16,7 @@ function List() {
     const [itemToDelete, setItemToDelete] = useState(null);
     const { loading, setLoading } = useLoading();
     const [accordionType, setAccordionType] = useState(false);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const onClickSetState = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -65,7 +65,7 @@ function List() {
             <section className={`section`}>
                 <div className={`card-head`}>
                     <div className={`card-title`}>
-                        <p className='py-0 m-0 btn' onClick={() => (navigate('/admin/settings/faqs/create', true))} > Frequently Asked Questions  </p>
+                        <p className='py-0 m-0 btn' onClick={() => (router.push('/admin/settings/faqs/create', true))} > Frequently Asked Questions  </p>
                     </div>
                 </div>
                 <div className={`row`}>

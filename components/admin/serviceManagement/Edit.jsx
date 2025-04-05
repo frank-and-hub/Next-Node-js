@@ -3,7 +3,7 @@ import { useFormValidation } from '../../Form/FormValidation'
 import SubmitButton from '../../Form/SubmitButton'
 import Input from '../../Form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../../Comman/Notification/Notification'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import SelectIcon from '../../Form/Select/SelectIcon'
 import { formattedData } from '../../../utils/helper'
@@ -13,11 +13,12 @@ import Textarea from '../../Form/Textarea'
 import { useLoading } from '../../../context/LoadingContext'
 import CardForm from '../card/CardForm'
 import { serviceValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -46,7 +47,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/services', { replace: true })
+            router.push('/services')
         } catch (err) {
             notifyError(err.message)
         } finally {

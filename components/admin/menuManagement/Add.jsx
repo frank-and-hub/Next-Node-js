@@ -6,7 +6,7 @@ import SelectMenu from '../form/select/SelectMenu'
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifySuccess } from '../comman/notification/Notification'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { useLoading } from '../../../context/LoadingContext'
 import { menuValidation, useFormValidation } from '../../../utils/FormValidation'
 
@@ -14,7 +14,7 @@ function Add() {
 
   const { loading, setLoading } = useLoading();
   const [formKey, setFormKey] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const initialState = {
     name: '',
@@ -37,7 +37,7 @@ function Add() {
       const res = await post('/menus', values);
       if (res) {
         resetForm()
-        navigate('/admin/menus', true);
+        router.push('/admin/menus', true);
       }
       notifySuccess(res.message)
     } catch (err) {

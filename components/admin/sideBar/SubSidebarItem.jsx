@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import Link from 'next/link'
 import SidebarItem from './SidebarItem'
-import { ucwords } from '../../../utils/helper'
-import { SidebarContext } from '../../../context/SidebarContext';
+import { ucwords } from '@/utils/helper'
+import { SidebarContext } from '@/context/SidebarContext';
+import { useRouter } from 'next/router';
 
 function SubSidebarItem({ icon, label, subItems, route = null }) {
-    const navigate = useNavigate();
+    const router = useRouter();
     const { pathname } = useContext(SidebarContext);
     const [active, setActive] = useState(null);
     const id = `${label.replace(/\s+/g, '').toLowerCase()}-nav`;
 
     useEffect(() => {
-        
         const activeMenu = localStorage.getItem('active-main-menu');
         setActive(activeMenu);
     }, [active, subItems, pathname]);
@@ -32,7 +32,7 @@ function SubSidebarItem({ icon, label, subItems, route = null }) {
                 // to={`${route ?? null}`}
                 onClick={(e) => {
                     e.preventDefault();
-                    navigate(route, { replace: route ? true : false });
+                    router.push(route, { replace: route ? true : false });
                     handleSetActive(label);
                 }}
                 data-toggle={`tooltip`}

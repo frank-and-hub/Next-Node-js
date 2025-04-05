@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import Link from 'next/link';
 import { useAuth } from '../../../utils/AuthContext';
 import { notifySuccess } from '../comman/notification/Notification';
 import { post } from '../../../utils/AxiosUtils';
+import { useRouter } from 'next/router';
 
 const SignOut = () => {
-  const navigate = useNavigate();
+   const router = useRouter();
   const { logout } = useAuth();
 
   const handleSignOut = async () => {
@@ -14,7 +15,7 @@ const SignOut = () => {
       await logout();
       notifySuccess(`User sign out...`);
     }
-    navigate('/admin/signin', { replace: true })
+    router.push('/admin/signin')
   }
 
   return (

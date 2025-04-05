@@ -3,7 +3,7 @@ import { get, patch } from '../../../utils/AxiosUtils'
 import SubmitButton from '../form/SubmitButton'
 import Input from '../form/Input'
 import { notifyError, notifySuccess, notifyInfo } from '../comman/notification/Notification'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { processNotifications } from '../../../utils/notificationUtils'
 import { formattedData } from '../../../utils/helper'
@@ -13,11 +13,12 @@ import SelectForm from '../form/select/SelectForm'
 import Textarea from '../form/Textarea'
 import CardForm from '../card/CardForm'
 import { useFormValidation, warrantyValidation } from '../../../utils/FormValidation'
+import { useRouter } from 'next/router'
 
 function Edit() {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const router = useRouter();
     const { loading, setLoading } = useLoading();
     const [formKey, setFormKey] = useState(0);
 
@@ -46,7 +47,7 @@ function Edit() {
                 resetForm()
                 notifySuccess(res.message)
             }
-            navigate('/admin/warranties', { replace: true })
+            router.push('/admin/warranties')
         } catch (err) {
             notifyError(err.message)
         } finally {
