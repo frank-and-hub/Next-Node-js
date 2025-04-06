@@ -6,8 +6,19 @@ const nextConfig: NextConfig = {
   env: {
     API_URL: `${process.env.BASE_URL}:${process.env.PORT}/api/`,
   },
-  devServer: {
-    allowedDevOrigins: [`*`], // Allow these origins
+  // devServer: {
+  //   allowedDevOrigins: [`*`], // Allow these origins
+  // },
+  webpack(config) {
+    config.resolve.fallback = {
+      tls: false,
+      fs: false,
+      net: false,
+      path: false,
+      child_process: false,
+    };
+
+    return config;
   },
 };
 

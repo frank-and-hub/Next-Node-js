@@ -6,14 +6,24 @@
   "rootMainFiles": [],
   "pages": {
     "/_app": [
-      "static/chunks/node_modules_next_b090c39e._.js",
+      "static/chunks/[root of the server]__b2cef9f3._.js",
+      "static/chunks/node_modules_next_dist_compiled_crypto-browserify_index_429dd119.js",
+      "static/chunks/node_modules_next_dist_compiled_stream-http_index_fad3547c.js",
+      "static/chunks/node_modules_next_dist_compiled_browserify-zlib_index_9dad3282.js",
+      "static/chunks/node_modules_next_dist_compiled_1ab28b6e._.js",
+      "static/chunks/node_modules_next_dist_shared_lib_67de5af5._.js",
+      "static/chunks/node_modules_next_dist_client_bd0963b8._.js",
+      "static/chunks/node_modules_next_dist_9cf64bed._.js",
+      "static/chunks/node_modules_next_079e66c9._.js",
       "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_@remix-run_router_dist_router_9af88a6b.js",
+      "static/chunks/08529_mime-db_161ec2ea._.js",
+      "static/chunks/node_modules_nodemailer_796b4a28._.js",
       "static/chunks/node_modules_axios_lib_9aa2336a._.js",
-      "static/chunks/node_modules_f052a0f9._.js",
-      "static/chunks/[root of the server]__8dc2fec0._.js",
+      "static/chunks/node_modules_13d7857a._.js",
       "static/chunks/node_modules_react-toastify_dist_ReactToastify_904beb7c.css",
       "static/chunks/pages__app_5771e187._.js",
-      "static/chunks/pages__app_a8ed1c94._.js"
+      "static/chunks/pages__app_9d9be54b._.js"
     ]
   },
   "ampFirstPages": []

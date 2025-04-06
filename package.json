@@ -11,7 +11,10 @@
     "frontend": "next dev --turbopack"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@faker-js/faker": "^9.6.0",
+    "@mui/material": "^7.0.1",
     "@reduxjs/toolkit": "^2.6.1",
     "apexcharts": "^4.5.0",
     "axios": "^1.8.4",

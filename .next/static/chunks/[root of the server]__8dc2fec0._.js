@@ -472,10 +472,10 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [client] (ecmascript)");
 const config = {
-    baseUrl: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_BASE_URL,
-    reactUrl: `${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_BASE_URL}:${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_API_PORT}`,
-    reactApiUrl: `${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_BASE_URL}:${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_API_PORT}/api`,
-    pageignation: `${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_PAGEIGNATION}`
+    baseUrl: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.BASE_URL,
+    reactUrl: `${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.BASE_URL}:${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.REACT_PORT}`,
+    reactApiUrl: `http://192.168.189.53:5080/api`,
+    pageignation: `${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].env.DATA_PAGINATION_LIMIT}`
 };
 const __TURBOPACK__default__export__ = config;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -764,9 +764,9 @@ const handleToggleSidebar = ()=>{
         }
     }
 };
-const getToken = ()=>{
+const getToken = (string)=>{
     if ("TURBOPACK compile-time truthy", 1) {
-        return localStorage.getItem('token');
+        return localStorage.getItem(string);
     }
     "TURBOPACK unreachable";
 };
@@ -795,7 +795,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helpe
 const baseUrl = __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$config$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].reactApiUrl;
 const request = async (method, url, data = {})=>{
     try {
-        const token = (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getToken"])();
+        const token = (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getToken"])('token');
         const config = {
             method,
             url: baseUrl + url,
@@ -911,7 +911,7 @@ const AuthProvider = ({ children })=>{
     }["AuthProvider.useSelector[user]"]);
     const token = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useSelector"])({
         "AuthProvider.useSelector": (state)=>state.auth.token
-    }["AuthProvider.useSelector"]) ?? (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getToken"])();
+    }["AuthProvider.useSelector"]) ?? (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$client$5d$__$28$ecmascript$29$__["getToken"])('token');
     // const token = localStorage.getItem('token');
     const EXPIRATION_TIME = 60 * 60 * 1000; // 3600000 // 1 hour
     const isTokenExpired = ()=>{
@@ -959,6 +959,7 @@ const AuthProvider = ({ children })=>{
     }["AuthProvider.useCallback[register]"], []);
     const login = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "AuthProvider.useCallback[login]": async (email, password)=>{
+            console.log(email, password, url);
             try {
                 const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$api$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"].post(`${url}/sign-in`, {
                     email,
@@ -1064,7 +1065,7 @@ const AuthProvider = ({ children })=>{
         children: !loading && children
     }, void 0, false, {
         fileName: "[project]/components/utils/AuthContext.js",
-        lineNumber: 127,
+        lineNumber: 128,
         columnNumber: 9
     }, this);
 };

@@ -412,5 +412,5 @@ const fetchAndStoreCountries = async () => {
 }
 
 // Run the Seeder
-// seedUserData();
+seedUserData();
 // fetchAndStoreCountries();

@@ -35,10 +35,10 @@ __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
 const config = {
-    baseUrl: process.env.REACT_APP_BASE_URL,
-    reactUrl: `${process.env.REACT_APP_BASE_URL}:${process.env.REACT_APP_API_PORT}`,
-    reactApiUrl: `${process.env.REACT_APP_BASE_URL}:${process.env.REACT_APP_API_PORT}/api`,
-    pageignation: `${process.env.REACT_APP_PAGEIGNATION}`
+    baseUrl: process.env.BASE_URL,
+    reactUrl: `${process.env.BASE_URL}:${process.env.REACT_PORT}`,
+    reactApiUrl: `http://192.168.189.53:5080/api`,
+    pageignation: `${process.env.DATA_PAGINATION_LIMIT}`
 };
 const __TURBOPACK__default__export__ = config;
 }}),
@@ -339,7 +339,7 @@ const handleToggleSidebar = ()=>{
         }
     }
 };
-const getToken = ()=>{
+const getToken = (string)=>{
     if ("TURBOPACK compile-time falsy", 0) {
         "TURBOPACK unreachable";
     }
@@ -373,7 +373,7 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 const baseUrl = __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$config$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"].reactApiUrl;
 const request = async (method, url, data = {})=>{
     try {
-        const token = (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getToken"])();
+        const token = (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getToken"])('token');
         const config = {
             method,
             url: baseUrl + url,
@@ -510,7 +510,7 @@ const AuthProvider = ({ children })=>{
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(false);
     const isLoggedIn = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$redux__$5b$external$5d$__$28$react$2d$redux$2c$__esm_import$29$__["useSelector"])((state)=>state.auth.isAuthenticated);
     const user = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$redux__$5b$external$5d$__$28$react$2d$redux$2c$__esm_import$29$__["useSelector"])((state)=>state.auth.user);
-    const token = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$redux__$5b$external$5d$__$28$react$2d$redux$2c$__esm_import$29$__["useSelector"])((state)=>state.auth.token) ?? (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getToken"])();
+    const token = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$redux__$5b$external$5d$__$28$react$2d$redux$2c$__esm_import$29$__["useSelector"])((state)=>state.auth.token) ?? (0, __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$helper$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["getToken"])('token');
     // const token = localStorage.getItem('token');
     const EXPIRATION_TIME = 60 * 60 * 1000; // 3600000 // 1 hour
     const isTokenExpired = ()=>{
@@ -551,6 +551,7 @@ const AuthProvider = ({ children })=>{
         }
     }, []);
     const login = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useCallback"])(async (email, password)=>{
+        console.log(email, password, url);
         try {
             const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$utils$2f$api$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"].post(`${url}/sign-in`, {
                 email,
@@ -645,7 +646,7 @@ const AuthProvider = ({ children })=>{
         children: !loading && children
     }, void 0, false, {
         fileName: "[project]/components/utils/AuthContext.js",
-        lineNumber: 127,
+        lineNumber: 128,
         columnNumber: 9
     }, this);
 };
